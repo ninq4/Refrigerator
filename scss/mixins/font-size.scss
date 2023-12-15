@@ -1,0 +1,14 @@
+@mixin title {
+  font-family: $font-monterrat;
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin descr-reqular {
+  font-family: $font-incosolata;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+}
