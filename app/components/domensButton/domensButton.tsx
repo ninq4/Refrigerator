@@ -3,19 +3,30 @@ import style from '../header/header.module.scss';
 import chevronRight from '@/public/chevron-right.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
-export const DomenButton = () => {
-  const [open, setOpen] = useState(false);
-//   console.log(open)
+import { SetStateAction, useEffect } from 'react';
 
+export const DomenButton = ({
+  open,
+  handleToggle,
+}: {
+  open: boolean;
+  handleToggle: (setOpen: SetStateAction<boolean>) => void;
+}) => {
+  // console.log(handleToggle);
   return (
     <>
-      <li className={`${style.header__menu_item} ${open ? `${style.active}` : ''} `}>
-        <button className={`${style.header__menu_link} ${open ? `${style.active}` : ''}`} onClick={() => setOpen(!open)}>
+      <li className={`${style.header__menu_item} ${open ? `${style.active}` : ''}`}>
+        <button
+          className={`${style.header__menu_link} ${open ? `${style.active}` : ''}`}
+          onClick={() => handleToggle(!open)}>
           Домены
-          <Image className={`${style.header__menu_chevron} ${open ? `${style.active}` : ''}`} src={chevronRight} alt={'chevron-right'} />
+          <Image
+            className={`${style.header__menu_chevron} ${open ? `${style.active}` : ''}`}
+            src={chevronRight}
+            alt={'chevron-right'}
+          />
         </button>
-        <menu className={`${style.header__vidget}  ${open ? `${style.active}` : ''}`}>
+        <menu className={`${style.header__vidget} ${open ? `${style.active}` : ''}`}>
           {renderLink('/', 'Регистрация домена', 'Лучшие цены на регистрацию')}
           {renderLink('/', 'SSL-сертификаты', 'Повышают репутацию вашего сайта')}
           {renderLink('/', 'Перенос домена в HostName', 'Смена регистратора домена')}
@@ -23,13 +34,16 @@ export const DomenButton = () => {
           {renderLink('/', 'Продление домена', 'Общая информация о хостинге')}
         </menu>
       </li>
+      <div
+        onClick={() => handleToggle}
+        className={`${style.header__overlay} ${open ? `${style.active}` : ''}`}></div>
     </>
   );
 };
 
 const renderLink = (href: string, title: string, descr: string) => {
   return (
-    <li className={style.header__vidget_item}>
+    <li className={`${style.header__vidget_item}`}>
       <Link href={href} className={style.header__vidget_link}>
         <div className={style.header__vidget_wrapper}>
           <p className={style.header__vidget_title}>{title}</p>

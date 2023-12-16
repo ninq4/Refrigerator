@@ -88,6 +88,8 @@
     &_descr {
       @include descr-reqular;
       color: $text-color;
+      max-width: 352px;
+      margin-bottom: 40px;
     }
     &_btnWrapper {
       display: flex;
