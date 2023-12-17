@@ -6,16 +6,16 @@ export function HeaderBottomMenuItem({
     image,
     alt,
     text,
-    opened,
+    open,
   }: {
     link: string;
     image?: string;
     alt: string;
     text?: string;
-    opened?: boolean;
+    open?: boolean;
   }) {
     return (
-      <li className={`${style.header__menu_item} ${opened ? `${style.active}` : ''}`}>
+      <li className={`${style.header__menu_item} ${open ? `${style.active}` : ''}`}>
         <Link className={style.header__menu_link} href={link}>
           {image && <Image src={image} alt={alt} />}
           {text}

@@ -4,6 +4,7 @@
 
 .service_section {
   padding-top: 150px;
+  padding-bottom: 150px;
   &__container {
     @include container;
   }
@@ -38,7 +39,7 @@
       gap: 40px;
     }
     &_title {
-      @include title;
+      @include subtitle;
       color: $white-color;
     }
     &_descr {
@@ -82,7 +83,7 @@
       max-width: 450px;
     }
     &_title {
-      @include title;
+      @include subtitle;
       color: $text-color;
     }
     &_descr {
@@ -117,7 +118,7 @@
     background-color: $background-secondary;
     box-shadow: $shadow;
     &_title {
-      @include title;
+      @include subtitle;
       color: $text-color;
     }
     &_descr {
@@ -149,7 +150,7 @@
     background-color: $background-secondary;
     box-shadow: $shadow;
     &_title {
-      @include title;
+      @include subtitle;
       color: $text-color;
     }
     &_descr {

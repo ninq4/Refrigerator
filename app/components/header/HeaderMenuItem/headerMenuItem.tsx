@@ -1,21 +1,22 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import style from "../header.module.scss";
-export function HeaderTopMenuItem({
+export  function  HeaderTopMenuItem({
     link,
     image,
     alt,
     text,
-    opened,
+    open,
   }: {
     link: string;
     image?: string;
     alt: string;
     text?: string;
-    opened?: boolean;
+    open?: boolean;
   }) {
     return (
-      <li className={`${style.header__top_item} ${opened ? `${style.active}` : ''}`}>
+      <li className={`${style.header__top_item} ${open ? `${style.active}` : ''}`}>
         <Link className={style.header__top_link} href={link}>
           {image && <Image src={image} alt={alt} />}
           {text}

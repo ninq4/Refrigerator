@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Link from 'next/link';
 import Image from 'next/image';
 import style from './header.module.scss';
@@ -7,15 +7,21 @@ import BookMark from '@/public/bookmarks.svg';
 import MessageBox from '@/public/bx-message-square-dots.svg';
 import user from '@/public/user.svg';
 
-import { DomenButton } from '../domensButton/domensButton';
+import { DomenButton } from './domensButton/domensButton';
 import { useOpenVidget } from '../../hooks/useOpenVidget';
-import { HeaderTopMenuItem}  from './HeaderMenuItem/headerMenuItem';
+import { HeaderTopMenuItem } from './HeaderMenuItem/headerMenuItem';
 import { HeaderBottomMenuItem } from './HeaderBottomMenuItem/headerBottomMenuItem';
+
 
 export default function Header() {
   const { open, handleToggle } = useOpenVidget(false);
-  console.log('open:', open);
-  console.log('handleToggle:', handleToggle);
+  const menuItems = [
+    { link: '/', image: Card, alt: 'Card' },
+    { link: '/', image: BookMark, alt: 'BookMark' },
+    { link: '/', image: MessageBox, alt: 'MessageBox' },
+    { link: '/', image: user, alt: '', text: 'Вход' },
+    { link: '/', text: 'Регистрация', alt: 'Registration' },
+  ];
 
   return (
     <header className={`body__header ${style.header}`}>
@@ -26,28 +32,22 @@ export default function Header() {
               Fucking. Refrigerator
             </Link>
             <menu className={style.header__top_menu}>
-              {[
-                { link: '/', image: Card, alt: 'Card' },
-                { link: '/', image: BookMark, alt: 'BookMark' },
-                { link: '/', image: MessageBox, alt: 'MessageBox' },
-                { link: '/', image: user, alt: '', text: 'Вход' },
-                { link: '/', text: 'Регистрация', alt: 'Registration' },
-              ].map((item, index) => (
+              {menuItems.map((item, pos) => (
                 <HeaderTopMenuItem
-                  key={index}
+                  key={pos}
                   link={item.link}
                   image={item.image}
                   alt={item.alt}
                   text={item.text}
-                  opened={open}
+                  open={open}
                 />
               ))}
             </menu>
           </div>
           <menu className={style.header__bottom_menu}>
-            <HeaderBottomMenuItem link="/" text="Хостинг" alt="Hosting" opened={open} />
-            <HeaderBottomMenuItem link="/" text="VDS и VPS" alt="VDS and VPS" opened={open} />
-            <HeaderBottomMenuItem link="/" text="Почта" alt="Mail" opened={open} />
+            <HeaderBottomMenuItem link="/" text="Хостинг" alt="Hosting" open={open} />
+            <HeaderBottomMenuItem link="/" text="VDS и VPS" alt="VDS and VPS" open={open} />
+            <HeaderBottomMenuItem link="/" text="Почта" alt="Mail" open={open} />
             <DomenButton open={open} handleToggle={handleToggle} />
             <HeaderBottomMenuItem link="/" text="Выделенные сервера" alt="Selected servers" />
             <HeaderBottomMenuItem link="/" text="Конструктор сайтов" alt="Website builder" />
@@ -55,7 +55,7 @@ export default function Header() {
               link="/"
               text="Партнерская программа"
               alt="Partnership program"
-              opened={open}
+              open={open}
             />
           </menu>
         </div>
@@ -63,6 +63,4 @@ export default function Header() {
     </header>
   );
 }
-
-
 

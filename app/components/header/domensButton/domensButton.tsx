@@ -1,5 +1,5 @@
 'use client';
-import style from '../header/header.module.scss';
+import style from '../header.module.scss';
 import chevronRight from '@/public/chevron-right.svg';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -35,7 +35,7 @@ export const DomenButton = ({
         </menu>
       </li>
       <div
-        onClick={() => handleToggle}
+        onClick={() => handleToggle(!open)}
         className={`${style.header__overlay} ${open ? `${style.active}` : ''}`}></div>
     </>
   );

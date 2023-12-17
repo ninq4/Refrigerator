@@ -1,5 +1,13 @@
 @mixin title {
   font-family: $font-monterrat;
+  font-size: 61px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+@mixin subtitle {
+  font-family: $font-monterrat;
   font-size: 39px;
   font-style: normal;
   font-weight: 600;
