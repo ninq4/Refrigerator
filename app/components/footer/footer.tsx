@@ -55,7 +55,9 @@ export default function Footer() {
             <div className={style.footer__rules}>
               <Link href={''} className={style.footer__rules_item}>
                 Правовая информация
-              </Link> и <Link href={''} className={style.footer__rules_item}>
+              </Link>{' '}
+              и{' '}
+              <Link href={''} className={style.footer__rules_item}>
                 Правила пользователя
               </Link>
             </div>
