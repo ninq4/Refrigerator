@@ -1,6 +1,7 @@
 @import '@/scss/vars.scss';
 @import '@/scss/mixins.scss';
 .helps_section {
+    padding-top: 150px;
   &__container {
     @include container;
   }
