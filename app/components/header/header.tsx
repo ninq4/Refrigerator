@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import style from './header.module.scss';
@@ -11,7 +11,6 @@ import { DomenButton } from './domensButton/domensButton';
 import { useOpenVidget } from '../../hooks/useOpenVidget';
 import { HeaderTopMenuItem } from './HeaderMenuItem/headerMenuItem';
 import { HeaderBottomMenuItem } from './HeaderBottomMenuItem/headerBottomMenuItem';
-
 
 export default function Header() {
   const { open, handleToggle } = useOpenVidget(false);
@@ -28,7 +27,7 @@ export default function Header() {
       <div className={style.header__container}>
         <div className={style.header__inner}>
           <div className={style.header__top}>
-            <Link href="/" className={`${style.header__top_logo} ${open ? `${style.active}` : ''}`}>
+            <Link href={"/"} className={`${style.header__top_logo} ${open ? `${style.active}` : ''}`}>
               Fucking. Refrigerator
             </Link>
             <menu className={style.header__top_menu}>
@@ -45,7 +44,7 @@ export default function Header() {
             </menu>
           </div>
           <menu className={style.header__bottom_menu}>
-            <HeaderBottomMenuItem link="/" text="Хостинг" alt="Hosting" open={open} />
+            <HeaderBottomMenuItem link={'/hostings'} text="Хостинг" alt="Hosting" open={open} />
             <HeaderBottomMenuItem link="/" text="VDS и VPS" alt="VDS and VPS" open={open} />
             <HeaderBottomMenuItem link="/" text="Почта" alt="Mail" open={open} />
             <DomenButton open={open} handleToggle={handleToggle} />
@@ -63,4 +62,3 @@ export default function Header() {
     </header>
   );
 }
-

@@ -1,6 +1,5 @@
 'use client';
 import style from '@/app/sections/comments-section/comments-section.module.scss';
-import { comments } from '@/app/sections/comments-section/commentsList/commentsList';
 import { RenderComment } from '@/app/sections/comments-section/render-comment/renderComment';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,8 +15,7 @@ export const Slider = observer(() => {
   const { fetchComments, comment } = CommentsStore;
   useEffect(() => {
     fetchComments();
-  },[])
-  console.log(comment)
+  }, []);
   return (
     <Swiper
       modules={[Navigation]}

@@ -1,5 +1,4 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import {IPromiseBasedObservable} from 'mobx-utils';
 interface IComment {
   postId: number;
   id: number;
