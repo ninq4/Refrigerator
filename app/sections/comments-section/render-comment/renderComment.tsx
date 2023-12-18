@@ -7,7 +7,7 @@ import Link from 'next/link';
 export function RenderComment({
   name,
   surname,
-  avatar = user.src,
+  avatar ,
   text,
 }: {
   name: string;
@@ -27,7 +27,7 @@ export function RenderComment({
     <article className={style.comments_section__item}>
       <header className={style.comments_section__item_header}>
         <div className={style.comments__item_circleAvatar}>
-          <Image src={user} alt="avatar" className={style.comments_section__item_avatar} />
+          <Image src={avatar} alt="avatar" className={style.comments_section__item_avatar} />
         </div>
         <h4 className={style.comments_section__item__name}>
           {name} {surname}
