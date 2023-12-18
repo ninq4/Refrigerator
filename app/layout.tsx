@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <RootStoreContext.Provider value={new RootStore()}>
-      <html lang="en">
-        <body className="body">
+    <html lang="en">
+      <body className="body">
           <Header />
           <main className="body__main main">{children}</main>
           <Footer />
-        </body>
-      </html>
-    </RootStoreContext.Provider>
+        {/* <RootStoreContext.Provider value={new RootStore()}>
+        </RootStoreContext.Provider> */}
+      </body>
+    </html>
   );
 }

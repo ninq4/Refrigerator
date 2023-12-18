@@ -21,7 +21,9 @@ class HostsStore {
   fetchHost = async () => {
     try {
       this.isLoading = true;
-      const response = await fetch('http://localhost:5000/hostscardMonth?categoryId=' + this.categoryId);
+      const response = await fetch(
+        'http://localhost:5000/hostscardMonth?categoryId=' + this.categoryId,
+      );
       const data = await response.json();
       runInAction(() => {
         this.category = data;
@@ -31,13 +33,6 @@ class HostsStore {
       this.isLoading = false;
       console.error('Error fetching hosts:', error);
     }
-  };
-
-
-
-  increment = (id: number) => {
-    this.categoryId += id;
-    console.log('Incrementing categoryId:', this.categoryId);
   };
 }
 
