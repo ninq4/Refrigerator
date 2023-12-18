@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import '@/scss/main.scss';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
+import { RootStoreContext } from './root-store-context';
+import RootStore from './store/root-store';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -11,12 +13,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="body">
-        <Header />
-        <main className="body__main main">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <RootStoreContext.Provider value={new RootStore()}>
+      <html lang="en">
+        <body className="body">
+          <Header />
+          <main className="body__main main">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </RootStoreContext.Provider>
   );
 }

@@ -21,7 +21,7 @@ class HostsStore {
   fetchHost = async () => {
     try {
       this.isLoading = true;
-      const response = await fetch('http://localhost:5000/hostscard?categoryId=' + this.categoryId);
+      const response = await fetch('http://localhost:5000/hostscardMonth?categoryId=' + this.categoryId);
       const data = await response.json();
       runInAction(() => {
         this.category = data;
