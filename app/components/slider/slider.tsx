@@ -7,9 +7,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import { NavButtons } from './NavButtons/navButtons';
+import { observer } from 'mobx-react-lite';
+import CommentsStore from '@/app/store/fetchComments';
+import { useEffect } from 'react';
 // import 'swiper/css/navigation';
 
-export const Slider = () => {
+export const Slider = observer(() => {
+  const { fetchComments, comment } = CommentsStore;
+  useEffect(() => {
+    fetchComments();
+  },[])
+  console.log(comment)
   return (
     <Swiper
       modules={[Navigation]}
@@ -19,13 +27,18 @@ export const Slider = () => {
       spaceBetween={40}
       className={style.comments_section__swiper}>
       <ul className={style.comments_section__list}>
-        {comments.map((comment, pos) => (
+        {comment.map((comment: any, pos: number) => (
           <SwiperSlide key={pos}>
-            <RenderComment {...comment} />
+            <RenderComment
+              name={comment.name}
+              surname={comment.surname}
+              avatar={comment.avatar}
+              comment={comment.comment}
+            />
           </SwiperSlide>
         ))}
       </ul>
       <NavButtons />
     </Swiper>
   );
-};
+});

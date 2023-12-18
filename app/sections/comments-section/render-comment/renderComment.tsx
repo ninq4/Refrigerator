@@ -4,20 +4,20 @@ import user from '@/public/user.svg';
 import chevron from '@/public/chevron-right.svg';
 import Link from 'next/link';
 
-export function RenderComment({
+export const RenderComment = ({
   name,
   surname,
-  avatar ,
-  text,
+  avatar,
+  comment,
 }: {
   name: string;
   surname?: string;
-  avatar: string;
-  text: string;
-}) {
-  const slicedText = text.length > 115 ? text.slice(0, 115) + '...' : text;
+  avatar: any;
+  comment: string;
+}) => {
+  const slicedText = comment.length > 110? comment.slice(0, 110) + '...' : comment;
   const showMore =
-    text.length > 110 ? (
+    comment.length > 110 ? (
       <Link href={''} className={style.comments_section__item_more}>
         Читать полностью
       </Link>

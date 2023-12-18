@@ -18,7 +18,10 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: #8300c0;
+    background-color: rgba(255, 255, 255, 0.08);
+
+
+    backdrop-filter: blur(30px);
     position: absolute;
     top: 0;
     left: 0;
@@ -29,7 +32,10 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: #2f1ef8;
+    background-color: rgba(255, 255, 255, 0.10);
+
+
+    backdrop-filter: blur(30px);
     position: absolute;
     top: 0;
     right: 0;
@@ -66,7 +72,7 @@
     margin-top: 30px;
     padding-right: 50px;
   }
-  &__more{
+  &__more {
     font-family: $font-incosolata;
     font-size: 16px;
     font-weight: 600;
@@ -83,7 +89,6 @@
   border-radius: 15px;
   &__button {
     @include button($accent-color, $white-color);
-
   }
   &__input {
     padding: 0;
