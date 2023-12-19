@@ -1,0 +1,34 @@
+@import '@/scss/vars.scss';
+@import '@/scss/mixins.scss';
+
+.transfer_section{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 100px;
+    &__container{
+        @include container;
+        padding: 20px 30px;
+        background-color: $background-card;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-radius: 15px;
+    }
+    &__inner{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 300px;
+    }
+    &__title{
+       font-family: $font-monterrat;
+       font-size: 49px;
+       font-weight: 600;
+        width: 450px;
+    }
+    &__btn{
+        @include button($white-color, $accent-color);
+    }
+}

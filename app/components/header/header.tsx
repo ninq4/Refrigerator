@@ -45,7 +45,7 @@ export default function Header() {
           </div>
           <menu className={style.header__bottom_menu}>
             <HeaderBottomMenuItem link={'/hostings'} text="Хостинг" alt="Hosting" open={open} />
-            <HeaderBottomMenuItem link="/" text="VDS и VPS" alt="VDS and VPS" open={open} />
+            <HeaderBottomMenuItem link={"/VDSVPS"} text="VDS и VPS" alt="VDS and VPS" open={open} />
             <HeaderBottomMenuItem link="/" text="Почта" alt="Mail" open={open} />
             <DomenButton open={open} handleToggle={handleToggle} />
             <HeaderBottomMenuItem link="/" text="Выделенные сервера" alt="Selected servers" />
