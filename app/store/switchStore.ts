@@ -6,7 +6,6 @@ class useSwitcher {
   }
   isSwitched() {
     this.switch = !this.switch;
-    console.log(this.switch);
   }
 }
 export default new useSwitcher();

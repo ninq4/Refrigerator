@@ -2,12 +2,22 @@
 import { observer } from 'mobx-react-lite';
 import style from '../hosting-section.module.scss';
 import HostsStore from '@/app/store/fetchHosts';
+import useSwitcher from '@/app/store/switchStore';
 const TabsBtns = observer(() => {
   const btnsList = ['Виртуальный хостинг', 'Хостинг для CMS', 'Хостинг для 1C-Битрикс'];
-  const { categoryId, fetchHost } = HostsStore;
+  const { categoryId, fetchHostMonths, fetchHostYear } = HostsStore;
   const setCategoryId = (id: number): void => {
     HostsStore.categoryId = id;
-    fetchHost();
+    if (useSwitcher.switch == false) {
+      fetchHostMonths();
+      console.log(useSwitcher.switch);
+      console.log(fetchHostMonths)
+    } else {
+      fetchHostYear();
+      console.log(useSwitcher.switch);
+      console.log(fetchHostYear)
+    }
+    console.log(useSwitcher.switch);
   };
   return (
     <div className={style.hostings_section__tabs_btns}>
@@ -17,7 +27,9 @@ const TabsBtns = observer(() => {
         return (
           <button
             onClick={() => setCategoryId(pos)}
-            className={`${style.hostings_section__tabs_btn} ${categoryId === pos ? `${style.active}` : ''}`}
+            className={`${style.hostings_section__tabs_btn} ${
+              categoryId === pos ? `${style.active}` : ''
+            }`}
             key={pos}>
             {btn}
           </button>

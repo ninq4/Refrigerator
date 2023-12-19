@@ -10,7 +10,8 @@ interface IHosts {
 }
 
 class HostsStore {
-  category: IHosts[] = [];
+  categoryMonth: IHosts[] = [];
+  categoryYear: IHosts[] = [];
   isLoading = false;
   categoryId = 0;
 
@@ -18,7 +19,7 @@ class HostsStore {
     makeAutoObservable(this);
   }
 
-  fetchHost = async () => {
+  fetchHostMonths = async () => {
     try {
       this.isLoading = true;
       const response = await fetch(
@@ -26,7 +27,23 @@ class HostsStore {
       );
       const data = await response.json();
       runInAction(() => {
-        this.category = data;
+        this.categoryMonth = data;
+        this.isLoading = false;
+      });
+    } catch (error) {
+      this.isLoading = false;
+      console.error('Error fetching hosts:', error);
+    }
+  };
+  fetchHostYear = async () => {
+    try {
+      this.isLoading = true;
+      const response = await fetch(
+        'http://localhost:5000/hostscardYear?categoryId=' + this.categoryId,
+      );
+      const data = await response.json();
+      runInAction(() => {
+        this.categoryYear = data;
         this.isLoading = false;
       });
     } catch (error) {

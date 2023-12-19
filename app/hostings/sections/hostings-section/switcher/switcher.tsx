@@ -2,8 +2,15 @@
 import style from '../hosting-section.module.scss';
 import { observer } from 'mobx-react-lite';
 import useSwitcher from '@/app/store/switchStore';
+import HostsStore from '@/app/store/fetchHosts';
 
 export const Switcher = observer(() => {
+  const { categoryId, fetchHostMonths, fetchHostYear } = HostsStore;
+  if(useSwitcher.switch === false){
+    fetchHostMonths();
+  } else{
+    fetchHostYear();
+  }
   return (
     <div className={style.hostings_section__tabs_switcherWrapper}>
       <span

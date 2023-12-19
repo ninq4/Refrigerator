@@ -6,11 +6,19 @@ import TabsBtns from '../tabsBtns/tabsBtns';
 import { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import HostsStore from '@/app/store/fetchHosts';
+import useSwitcher from '@/app/store/switchStore';
 
 export const HostsTabs = observer(() => {
-  const { fetchHost, category } = HostsStore;
+  const { fetchHostMonths, categoryMonth, fetchHostYear, categoryYear } = HostsStore;
+
   useEffect(() => {
-    fetchHost();
+    if (useSwitcher.switch == false) {
+      fetchHostMonths();
+      console.log(useSwitcher.switch);
+    } else {
+      fetchHostYear();
+      console.log(useSwitcher.switch);
+    }
   }, []);
   //   console.log(setCategoryId);
 
@@ -21,15 +29,26 @@ export const HostsTabs = observer(() => {
         <Switcher />
       </header>
       <ul className={style.hostings_section__tabs}>
-        {category.map((item, pos) => (
-          <RenderHosts
-            key={pos}
-            title={item.title}
-            subtitle={item.subtitle}
-            price={item.price}
-            dercrs={item.descrs}
-          />
-        ))}
+        {useSwitcher.switch
+          ? categoryYear.map((item, pos) => (
+              <RenderHosts
+                key={pos}
+                title={item.title}
+                subtitle={item.subtitle}
+                price={item.price}
+                oldprice={item.oldprice}
+                dercrs={item.descrs}
+              />
+            ))
+          : categoryMonth.map((item, pos) => (
+              <RenderHosts
+                key={pos}
+                title={item.title}
+                subtitle={item.subtitle}
+                price={item.price}
+                dercrs={item.descrs}
+              />
+            ))}
       </ul>
     </>
   );

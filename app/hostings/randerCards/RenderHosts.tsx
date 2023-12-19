@@ -1,3 +1,4 @@
+'use client';
 import style from '../sections/hostings-section/hosting-section.module.scss';
 export const RenderHosts = ({
   title,
@@ -12,6 +13,7 @@ export const RenderHosts = ({
   oldprice?: number;
   dercrs: any;
 }) => {
+
   return (
     <li className={style.hostings_section__tabs_item}>
       <article className={`${style.hostings_section__tabs_article} ${style.hosting_article}`}>
@@ -22,7 +24,9 @@ export const RenderHosts = ({
             <p className={style.hosting_article__price}>
               {price} ₽ <span className={style.hosting_article__price_span}>/мес</span>
             </p>
-            <p className={style.hosting_article__oldPrice}>{oldprice}</p>
+            <p style={oldprice === undefined ? { display: 'none' } : {}} className={style.hosting_article__oldPrice}>
+              {oldprice} ₽ /мес
+            </p>
           </div>
         </div>
         <ul className={style.hosting_article__list}>
