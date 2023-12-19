@@ -19,4 +19,35 @@
   font-size: 20px;
   font-weight: 700;
   transition: color 200ms, background-color 200ms;
+
+  &:hover {
+    background-color: lighten($background-color, 5%);
+  }
 }
+@mixin button-white($color, $background-color) {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+  
+    background-color: $background-color;
+    color: $color;
+    display: flex;
+    height: 48px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  
+    font-family: $font-incosolata;
+    font-size: 20px;
+    font-weight: 700;
+    transition: color 200ms, background-color 200ms;
+  
+    &:hover {
+      background-color: darken($background-color, 5%);
+    }
+  }
+

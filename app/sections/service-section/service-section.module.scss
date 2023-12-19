@@ -15,8 +15,11 @@
     grid-template-areas:
       'host vds vds'
       'host servers construct';
+      
   }
   &__host {
+    background-image: url(../../../public/cart-main.png);   
+    background-size: cover;
     grid-area: host;
     display: flex;
     align-items: flex-start;
@@ -30,6 +33,8 @@
     border-radius: 20px;
     height: 737px;
     box-shadow: $shadow;
+
+    
     &__textWrapper {
       max-width: 367px;
       width: 100%;
@@ -37,10 +42,12 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 40px;
+
     }
     &_title {
       @include subtitle;
       color: $white-color;
+
     }
     &_descr {
       @include descr-reqular;
@@ -52,7 +59,7 @@
       gap: 10px;
     }
     &_btn {
-      @include button($accent-color, $white-color);
+      @include button-white($accent-color, $white-color);
     }
     &_price {
       font-size: 14px;
@@ -62,6 +69,9 @@
     }
   }
   &__vds {
+    background-image: url(../../../public/cart-2.png); 
+    background-repeat: no-repeat;
+    background-position: right bottom;
     grid-area: vds;
     background-color: $background-secondary;
     box-shadow: $shadow;
@@ -117,7 +127,11 @@
     padding: 20px;
     background-color: $background-secondary;
     box-shadow: $shadow;
+    &_block{
+      display: flex;
+    }
     &_title {
+      margin: 0;
       @include subtitle;
       color: $text-color;
     }

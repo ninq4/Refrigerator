@@ -1,3 +1,4 @@
+
 @import '@/scss/vars.scss';
 @import '@/scss/mixins.scss';
 .domen_section {
@@ -15,31 +16,34 @@
   }
   &::before {
     content: '';
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-image: url(/papapa.png); 
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    transform: rotate(5deg);
+    width: 280px;
+    height: 400px;
 
 
-    backdrop-filter: blur(30px);
+
+
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
   }
   &::after {
     content: '';
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.10);
+    background-image: url(/papapa.png); 
+    background-repeat: no-repeat;
+    background-position: left;
+    transform: rotate(-10deg);
+    width: 350px;
+    height: 250px;
 
 
-    backdrop-filter: blur(30px);
+
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(30%, -20%);
   }
   &__list {
     padding: 0;

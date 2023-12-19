@@ -27,9 +27,23 @@
       align-items: flex-start;
       flex-direction: column;
       justify-content: space-between;
+      &__block{
+        display: flex;
+      }
     }
   }
 }
+
+.helps_article__block{
+  display: flex;
+  width: 100%;
+  
+}
+.helps_article__img{
+  margin-left: auto;
+  margin-right: 0;
+}
+
 .helps_article {
   &__title {
     margin: 0;
