@@ -18,8 +18,8 @@ export default function Header() {
     { link: '/', image: Card, alt: 'Card' },
     { link: '/', image: BookMark, alt: 'BookMark' },
     { link: '/', image: MessageBox, alt: 'MessageBox' },
-    { link: '/', image: user, alt: '', text: 'Вход' },
-    { link: '/', text: 'Регистрация', alt: 'Registration' },
+    { link: '/LogIn', image: user, alt: '', text: 'Вход' },
+    { link: '/SignIn', text: 'Регистрация', alt: 'Registration' },
   ];
 
   return (
@@ -46,7 +46,7 @@ export default function Header() {
           <menu className={style.header__bottom_menu}>
             <HeaderBottomMenuItem link={'/hostings'} text="Хостинг" alt="Hosting" open={open} />
             <HeaderBottomMenuItem link={"/VDSVPS"} text="VDS и VPS" alt="VDS and VPS" open={open} />
-            <HeaderBottomMenuItem link="/" text="Почта" alt="Mail" open={open} />
+            <HeaderBottomMenuItem link={"/mail"} text="Почта" alt="Mail" open={open} />
             <DomenButton open={open} handleToggle={handleToggle} />
             <HeaderBottomMenuItem link="/" text="Выделенные сервера" alt="Selected servers" />
             <HeaderBottomMenuItem link="/" text="Конструктор сайтов" alt="Website builder" />
