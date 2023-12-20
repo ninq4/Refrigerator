@@ -77,19 +77,19 @@ export default function Header() {
               <HeaderBottomMenuItem link={'/mail'} text="Почта" alt="Mail" open={open} />
               <DomenButton open={open} handleToggleBurger={handleToggleBurger} openBurger={openBurger} handleToggle={handleToggle} />
               <HeaderBottomMenuItem
-                link="/servers"
+                link={'/dedicated-servers'}
                 text="Выделенные сервера"
                 alt="Selected servers"
                 handleToggleBurger={handleToggleBurger}
               />
               <HeaderBottomMenuItem
-                link={'/constructor'}
+                link={'/WebsiteBuilder'}
                 text="Конструктор сайтов"
                 alt="Website builder"
                 handleToggleBurger={handleToggleBurger}
               />
               <HeaderBottomMenuItem
-                link="/"
+                link={"/AffiliateProgram"}
                 text="Партнерская программа"
                 alt="Partnership program"
                 open={open}
