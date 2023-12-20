@@ -8,11 +8,14 @@ import { SetStateAction, useEffect } from 'react';
 export const DomenButton = ({
   open,
   handleToggle,
+  handleToggleBurger,
+  openBurger,
 }: {
   open: boolean;
   handleToggle: (setOpen: SetStateAction<boolean>) => void;
+  handleToggleBurger: (setOpenBurger: SetStateAction<boolean>) => void;
+  openBurger: boolean;
 }) => {
-  // console.log(handleToggle);
   return (
     <>
       <li className={`${style.header__menu_item} ${open ? `${style.active}` : ''}`}>
@@ -27,26 +30,14 @@ export const DomenButton = ({
           />
         </button>
         <menu className={`${style.header__vidget} ${open ? `${style.active}` : ''}`}>
-          {renderLink(
-            '/registryDomens',
-            'Регистрация домена',
-            'Лучшие цены на регистрацию',
-            handleToggle,
-          )}
-          {renderLink('/SSL', 'SSL-сертификаты', 'Повышают репутацию вашего сайта', handleToggle)}
-          {renderLink(
-            '/DomainTransfer',
-            'Перенос домена в HostName',
-            'Смена регистратора домена',
-            handleToggle,
-          )}
-          {renderLink('/WhoIs', 'Сервис Whois', 'Whois-проверка домена', handleToggle)}
-          {renderLink('/DomainRenew', 'Продление домена', 'Общая информация о хостинге', handleToggle)}
+          {renderLink('/registryDomens', 'Регистрация домена', 'Лучшие цены на регистрацию', handleToggle, handleToggleBurger, openBurger)}
+          {renderLink('/SSL', 'SSL-сертификаты', 'Повышают репутацию вашего сайта', handleToggle, handleToggleBurger, openBurger)}
+          {renderLink('/DomainTransfer', 'Перенос домена в HostName', 'Смена регистратора домена', handleToggle, handleToggleBurger, openBurger)}
+          {renderLink('/WhoIs', 'Сервис Whois', 'Whois-проверка домена', handleToggle, handleToggleBurger, openBurger)}
+          {renderLink('/DomainRenew', 'Продление домена', 'Общая информация о хостинге', handleToggle, handleToggleBurger, openBurger)}
         </menu>
       </li>
-      <div
-        onClick={() => handleToggle(!open)}
-        className={`${style.header__overlay} ${open ? `${style.active}` : ''}`}></div>
+      <div onClick={() => handleToggle(!open)} className={`${style.header__overlay} ${open ? `${style.active}` : ''}`}></div>
     </>
   );
 };
@@ -56,10 +47,19 @@ const renderLink = (
   title: string,
   descr: string,
   handleToggle: (setOpen: SetStateAction<boolean>) => void,
+  handleToggleBurger?: (setOpenBurger: SetStateAction<boolean>) => void,
+  openBurger?: boolean,
 ) => {
+  const handleClick = () => {
+    if (handleToggleBurger) {
+      handleToggleBurger(!openBurger);
+    }
+    handleToggle(!open);
+  };
+
   return (
-    <li className={`${style.header__vidget_item}`}>
-      <Link href={href} onClick={() => handleToggle(!open)} className={style.header__vidget_link}>
+    <li onClick={handleClick} className={style.header__vidget_item}>
+      <Link href={href} className={style.header__vidget_link}>
         <div className={style.header__vidget_wrapper}>
           <p className={style.header__vidget_title}>{title}</p>
           <p className={style.header__vidget_descr}>{descr}</p>

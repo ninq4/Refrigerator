@@ -28,3 +28,9 @@
       @content;
     }
   }
+
+  @mixin adaptive ($width){
+    @media (max-width: $width){
+      @content;
+    }
+  }
