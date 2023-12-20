@@ -2,6 +2,7 @@ import Link from 'next/link';
 import style from './footer.module.scss';
 import { AboutList, ClientList, PartnerList } from './Lists/FooterLists';
 import { RenderLink } from './RenderLink/RenderLink';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -48,7 +49,8 @@ export default function Footer() {
         </div>
         <div className={style.footer__bottom}>
           <Link href={'/'} className={style.footer__logo}>
-            Logo
+            <Image src="/logo.png" width={20} height={20} alt="logo" />
+            Fucking. Refrigerator
           </Link>
           <div className={style.footer__bottom_info}>
             <p className={style.footer__copytright}>© ООО «Зеленоглазое такси»</p>

@@ -9,14 +9,15 @@ export const useOpenBurger: Function = (initialValueBurger: boolean) => {
     window.top?.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    const htmlElement = document.getElementsByTagName('html')[0];
-    htmlElement.style.overflowY = openBurger ? 'hidden' : 'auto';
+  // useEffect(() => {
+  //   const htmlElement = document.getElementsByTagName('html')[0];
+  //   htmlElement.style.overflowY = openBurger ? 'hidden' : 'auto';
 
-    return () => {
-      htmlElement.style.overflowY = 'auto';
-    };
-  }, [openBurger]);
+  //   return () => {
+  //     htmlElement.style.overflowY = 'auto';
+  //   };
+  // }, [openBurger]);
+  
 
   return { openBurger, handleToggleBurger, setOpenBurger };
 };

@@ -39,6 +39,7 @@ export default function Header() {
                   className={`${style.header__top_logo} ${open ? `${style.active}` : ''} ${
                     openBurger ? `${style.active_burger}` : ''
                   }`}>
+                    <Image src={'/logo.png'} alt="logo" width={20} height={20}/>
                   Fucking. Refrigerator
                 </Link>
               </div>
