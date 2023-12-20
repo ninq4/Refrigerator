@@ -1,11 +1,11 @@
 import style from './performans-section.module.scss';
 import Image from 'next/image';
-import File from '@/public/bx-file.svg';
-import Voice from '@/public/bx-user-voice.svg';
-import Mail from '@/public/mail.svg';
-import Clock from '@/public/bx-time-five.svg';
-import Star from '@/public/Vector-1.svg';
-import Lock from '@/public/Vector-2.svg';
+import File from '@/public/code100.png';
+import Voice from '@/public/icon2.png';
+import Mail from '@/public/icon3.png';
+import Clock from '@/public/cal100.png';
+import Star from '@/public/Prize100.png';
+import Lock from '@/public/Money100.png';
 import { RenderCards } from './RanderCards/RanderCards';
 export const PerformansSection = () => {
   return (

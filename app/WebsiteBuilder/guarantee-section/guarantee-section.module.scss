@@ -30,36 +30,18 @@
       position: relative;
       overflow: hidden;
       &:before{
-        content: '';
-        // background-image: url(/papapa.png); 
-        // background-repeat: no-repeat;
-        // background-position: right bottom;
-        // transform: rotate(5deg);
-        // width: 280px;
-        // height: 400px;
-    
-    
-    
-    
-        // position: absolute;
-        // top: 0;
-        // left: 0;
+        content: url("/papapa.png");
+        position: absolute;
+        transform: rotate(-37deg);
+        top: -30%;
+        left: -30%;
       }
       &:after{
-        content: '';
-        background-image: url(/papapa.png); 
-        background-repeat: no-repeat;
-        background-position: right bottom;
-        transform: rotate(5deg);
-        width: 600px;
-        height: 180px;
-    
-    
-    
-    
+        content: url("/papapa.png");
         position: absolute;
         top: 0;
-        left: 0;
+        right: -20%;
+        transform: rotate(24deg);
       }
     }
     &_title{
@@ -90,8 +72,8 @@
     padding: 20px;
     border-radius: 50%;
     background-color: $background-card;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;

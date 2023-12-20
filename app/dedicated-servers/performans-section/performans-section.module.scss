@@ -1,0 +1,52 @@
+@import '@/scss/vars.scss';
+@import '@/scss/mixins.scss';
+
+.performans_section {
+    margin: 0;
+    padding: 0;
+    padding-top: 100px;
+    &__container {
+        @include container;
+    }
+    &__title{
+        @include title;
+    }
+    &__list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+    }
+    &__item{
+        margin: 0;
+        padding: 0;
+        grid-column: 4 span;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px 30px;
+        background-color: $background-card;
+        border-radius: 15px;
+        box-shadow: $shadow;
+        &_image{
+            margin-bottom: 50px;
+        }
+        &__title{
+            padding: 0;
+            margin: 0;
+            font-family: $font-monterrat;
+            font-size: 20px;
+            font-family: 600;
+            margin-bottom: 20px;
+        }
+        &_descr{
+            padding: 0;
+            margin: 0;
+            font-family: $font-incosolata;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+}

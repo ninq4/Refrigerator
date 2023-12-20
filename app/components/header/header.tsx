@@ -48,10 +48,10 @@ export default function Header() {
             <HeaderBottomMenuItem link={"/VDSVPS"} text="VDS и VPS" alt="VDS and VPS" open={open} />
             <HeaderBottomMenuItem link={"/mail"} text="Почта" alt="Mail" open={open} />
             <DomenButton open={open} handleToggle={handleToggle} />
-            <HeaderBottomMenuItem link="/" text="Выделенные сервера" alt="Selected servers" />
-            <HeaderBottomMenuItem link="/" text="Конструктор сайтов" alt="Website builder" />
+            <HeaderBottomMenuItem link={"/dedicated-servers"} text="Выделенные сервера" alt="Selected servers" />
+            <HeaderBottomMenuItem link="/WebsiteBuilder" text="Конструктор сайтов" alt="Website builder" />
             <HeaderBottomMenuItem
-              link="/"
+              link={"/AffiliateProgram"}
               text="Партнерская программа"
               alt="Partnership program"
               open={open}

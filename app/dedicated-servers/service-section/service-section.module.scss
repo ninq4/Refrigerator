@@ -18,7 +18,7 @@
       
   }
   &__host {
-    background-image: url(../../../../public/cart-main.png);   
+    background-image: url(../../../public/cart-main.png);   
     background-size: cover;
     grid-area: host;
     display: flex;
@@ -69,7 +69,7 @@
     }
   }
   &__vds {
-    background-image: url(../../../../public/cart-2.png); 
+    background-image: url(../../../public/cart-2.png); 
     background-repeat: no-repeat;
     background-position: right bottom;
     grid-area: vds;
