@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-export const useOpenVidget: Function = (InitialValue:boolean) => {
+export const useOpenVidget: Function = (InitialValue: boolean) => {
   const [open, setOpen] = useState(InitialValue);
 
   const handleToggle = () => {
@@ -18,5 +18,5 @@ export const useOpenVidget: Function = (InitialValue:boolean) => {
     };
   }, [open]);
 
-  return  {open, handleToggle} ;
+  return { open, handleToggle };
 };
