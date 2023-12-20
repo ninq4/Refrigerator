@@ -23,6 +23,12 @@
         margin: 0;
         padding: 0;
         grid-column: 4 span;
+        @include adaptive(1200px){
+            grid-column: 6 span;
+        }
+        @include adaptive(785px){
+            grid-column: 12 span;
+        }
         display: flex;
         align-items: flex-start;
         flex-direction: column;

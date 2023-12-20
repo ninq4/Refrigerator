@@ -2,7 +2,7 @@
 // @import '@/scss/mixins/container.scss';
 @import '@/scss/mixins.scss';
 
-.service_section {
+.section {
   padding-top: 150px;
   padding-bottom: 150px;
   &__container {
@@ -15,10 +15,26 @@
     grid-template-areas:
       'host vds vds'
       'host servers construct';
-      
+
+    @include adaptive(1185px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'host servers'
+        'host construct'
+        'vds vds';
+    }
+    @include adaptive(785px) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'host'
+        'servers'
+        'vds'
+        'vds'
+        'construct';
+    }
   }
   &__host {
-    background-image: url(../../../public/cart-main.png);   
+    background-image: url(../../../public/cart-main.png);
     background-size: cover;
     grid-area: host;
     display: flex;
@@ -34,7 +50,6 @@
     height: 737px;
     box-shadow: $shadow;
 
-    
     &__textWrapper {
       max-width: 367px;
       width: 100%;
@@ -42,12 +57,10 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 40px;
-
     }
     &_title {
       @include subtitle;
       color: $white-color;
-
     }
     &_descr {
       @include descr-reqular;
@@ -69,7 +82,7 @@
     }
   }
   &__vds {
-    background-image: url(../../../public/cart-2.png); 
+    background-image: url(../../../public/cart-2.png);
     background-repeat: no-repeat;
     background-position: right bottom;
     grid-area: vds;
@@ -80,10 +93,20 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
     // max-width: 950px;
     // width: 100%;
     max-height: 358px;
     height: 100%;
+    @include adaptive(785px) {
+      flex-direction: column;
+      background-position: bottom bottom;
+      height: auto;
+    }
+    @include adaptive(427px){
+      background-image: none;
+    }
+
 
     padding: 20px;
     &_content {
@@ -93,6 +116,8 @@
       max-width: 450px;
     }
     &_title {
+      margin: 0;
+      padding: 0;
       @include subtitle;
       color: $text-color;
     }
@@ -127,7 +152,7 @@
     padding: 20px;
     background-color: $background-secondary;
     box-shadow: $shadow;
-    &_block{
+    &_block {
       display: flex;
     }
     &_title {

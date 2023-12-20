@@ -16,7 +16,7 @@ import { BurgerButton } from './burgerButton/burgerButton';
 
 export default function Header() {
   const { open, handleToggle } = useOpenVidget(false);
-  const { openBurger, handleToggleBurger} = useOpenBurger(false);
+  const { openBurger, handleToggleBurger } = useOpenBurger(false);
 
   const menuItems = [
     { link: '/', image: Card, alt: 'Card' },
@@ -39,8 +39,8 @@ export default function Header() {
                   className={`${style.header__top_logo} ${open ? `${style.active}` : ''} ${
                     openBurger ? `${style.active_burger}` : ''
                   }`}>
-                    <Image src={'/logo.png'} alt="logo" width={20} height={20}/>
-                  Fucking. Refrigerator
+                  <Image src={'/logo.png'} alt="logo" width={20} height={20} />
+                  Refrigerator
                 </Link>
               </div>
               <menu className={style.header__top_menu}>
@@ -76,7 +76,12 @@ export default function Header() {
                 handleToggleBurger={handleToggleBurger}
               />
               <HeaderBottomMenuItem link={'/mail'} text="Почта" alt="Mail" open={open} />
-              <DomenButton open={open} handleToggleBurger={handleToggleBurger} openBurger={openBurger} handleToggle={handleToggle} />
+              <DomenButton
+                open={open}
+                handleToggleBurger={handleToggleBurger}
+                openBurger={openBurger}
+                handleToggle={handleToggle}
+              />
               <HeaderBottomMenuItem
                 link={'/dedicated-servers'}
                 text="Выделенные сервера"
@@ -90,7 +95,7 @@ export default function Header() {
                 handleToggleBurger={handleToggleBurger}
               />
               <HeaderBottomMenuItem
-                link={"/AffiliateProgram"}
+                link={'/AffiliateProgram'}
                 text="Партнерская программа"
                 alt="Partnership program"
                 open={open}

@@ -23,13 +23,7 @@
         display: flex;
         align-items: flex-start;
     }
-    // &__right{
-    //     position: absolute; 
-    //     right: 0;
-    //     top: 80px;
-    //     z-index: 1;
-    // }
-    
+
     
     &__title{
         margin: 0;
@@ -40,6 +34,9 @@
         font-weight: 700;
         margin-bottom: 50px;
         // max-width: 600px;
+        @include adaptive(720px) {
+            font-size: 48px;
+        }
     }
     &__description{
         margin: 0;
@@ -49,6 +46,7 @@
         font-size: 28px;
         font-weight: 600;
         max-width: 800px;
+        width: 100%;
         margin-bottom: 50px;
     }
     &__btn{

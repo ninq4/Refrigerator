@@ -50,7 +50,7 @@ export default function Footer() {
         <div className={style.footer__bottom}>
           <Link href={'/'} className={style.footer__logo}>
             <Image src="/logo.png" width={20} height={20} alt="logo" />
-            Fucking. Refrigerator
+            Refrigerator
           </Link>
           <div className={style.footer__bottom_info}>
             <p className={style.footer__copytright}>© ООО «Зеленоглазое такси»</p>

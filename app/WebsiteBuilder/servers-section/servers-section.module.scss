@@ -45,6 +45,11 @@
     flex-wrap: wrap;
     position: relative;
     z-index: 0;
+    @include adaptive(440px)
+    {
+      justify-content: center;
+      flex-direction: column;
+    }
   }
 }
 .servers_vidget {

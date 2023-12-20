@@ -1,8 +1,8 @@
 import React from 'react';
 import style from '../performans-section.module.scss';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 export const RenderCards = ({image, title, descr}:{
-    image: string,
+    image: StaticImageData,
     title: string,
     descr: string
 }) => (
