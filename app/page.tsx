@@ -1,5 +1,5 @@
 import style from './page.module.scss';
-import { HelpsSection } from './sections/Helps/helps-section';
+import { HelpsSection } from './components/Helps/helps-section';
 import { CommentsSection } from './sections/comments-section/comments-section';
 import { DomenSection } from './sections/domen-section/domen';
 import HeroSection from './sections/hero-section/Hero-section';

@@ -40,6 +40,11 @@
     font-weight: 700;
     margin-bottom: 50px;
     max-width: 600px;
+    width: 100%;
+    @include adaptive(731px) {
+      
+    }
+    // @include adaptive()
   }
   &__description {
     margin: 0;
@@ -50,6 +55,9 @@
     font-weight: 600;
     max-width: 800px;
     margin-bottom: 50px;
+    @include adaptive(731px) {
+        font-size: 20px
+    }
   }
   &__btn {
     @include button($white-color, $accent-color);

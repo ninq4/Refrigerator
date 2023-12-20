@@ -25,7 +25,6 @@ export default function Header() {
     { link: '/LogIn', image: user, alt: '', text: 'Вход' },
     { link: '/SignIn', text: 'Регистрация', alt: 'Registration' },
   ];
-  console.log(window.innerWidth)
 
   return (
     <header className={`body__header ${style.header}`}>

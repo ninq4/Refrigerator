@@ -19,10 +19,18 @@ export const Slider = observer(() => {
   return (
     <Swiper
       modules={[Navigation]}
-      centeredSlides={true}
-      slidesPerView={3}
+      centeredSlides={false}
+      slidesPerView={1}
       loop
-      spaceBetween={40}
+      spaceBetween={0}
+      breakpoints={{
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }}
       className={style.comments_section__swiper}>
       <ul className={style.comments_section__list}>
         {comment.map((comment: any, pos: number) => (

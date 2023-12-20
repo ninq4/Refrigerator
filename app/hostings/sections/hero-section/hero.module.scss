@@ -1,7 +1,7 @@
 @import '@/scss/vars.scss';
 @import '@/scss/mixins.scss';
 
-.hero_section{
+.section{
 
     margin: 0;
     padding: 0;
@@ -29,6 +29,11 @@
         font-size: 61px;
         font-weight: 700;
         margin-bottom: 50px;
+        max-width: 553px;
+        width: 100%;
+        @include adaptive(437px){
+            font-size: 40px;
+        }
     }
     &__description{
         margin: 0;
