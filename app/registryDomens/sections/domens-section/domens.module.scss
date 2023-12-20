@@ -1,0 +1,70 @@
+@import '@/scss/vars.scss';
+@import '@/scss/mixins.scss';
+
+.section {
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+
+  &__container {
+    @include container;
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 50px;
+    width: 100%;
+  }
+  &__items {
+    grid-column: 3 span;
+    margin: 0;
+    padding: 0;
+    padding: 33px 72px 16px 72px;
+    border-radius: 20px;
+    background-color: $background-card;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    @include adaptive(1223px) {
+      grid-column: 4 span;
+    }
+    @include adaptive(912px) {
+      grid-column: 6 span;
+    }
+    @include adaptive(602px) {
+      grid-column: 12 span;
+      width: 100%;
+    //   padding: 0;
+    }
+    &_title {
+      margin: 0;
+      padding: 0;
+      font-family: $font-monterrat;
+      font-size: 49px;
+      font-weight: 600;
+      color: $accent-color;
+    }
+    &_price {
+      margin: 0;
+      padding: 0;
+      font-family: $font-incosolata;
+      font-size: 24px;
+      font-weight: 700;
+      span {
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+    &_registry {
+      margin: 0;
+      padding: 0;
+      font-family: $font-incosolata;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}

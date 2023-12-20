@@ -1,7 +1,7 @@
 @import '@/scss/vars.scss';
 @import '@/scss/mixins.scss';
 
-.technology_section{
+.section{
     &__container{
         @include container;
     }
@@ -17,7 +17,11 @@
     &__tabs_btns{
         display: flex;
         align-items: center;
-        gap: 113px;
+        justify-content: space-between;
+        gap: 100px;
+        @include adaptive(576px){
+            gap: 50px ;
+        }
     }
     &__tabs_btn{
         margin: 0;

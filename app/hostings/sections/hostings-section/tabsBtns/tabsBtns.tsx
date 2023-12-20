@@ -1,6 +1,6 @@
 'use client';
 import { observer } from 'mobx-react-lite';
-import style from '../hosting-section.module.scss';
+import style from '../hosting.module.scss';
 import HostsStore from '@/app/store/fetchHosts';
 import useSwitcher from '@/app/store/switchStore';
 const TabsBtns = observer(() => {
@@ -20,14 +20,14 @@ const TabsBtns = observer(() => {
     console.log(useSwitcher.switch);
   };
   return (
-    <div className={style.hostings_section__tabs_btns}>
+    <div className={style.section__tabs_btns}>
       {btnsList.map((btn, pos: number) => {
         categoryId === pos;
 
         return (
           <button
             onClick={() => setCategoryId(pos)}
-            className={`${style.hostings_section__tabs_btn} ${
+            className={`${style.section__tabs_btn} ${
               categoryId === pos ? `${style.active}` : ''
             }`}
             key={pos}>

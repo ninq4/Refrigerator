@@ -31,6 +31,7 @@
         font-weight: 700;
         color: rgba($text-color, .6);
         max-width: 531px;
+        margin-bottom: 20px;
     }
     &__btn {
         @include button($white-color, $accent-color);

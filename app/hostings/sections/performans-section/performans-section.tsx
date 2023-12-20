@@ -1,5 +1,4 @@
-import style from './performans-section.module.scss';
-import Image from 'next/image';
+import style from './performans.module.scss';
 import File from '@/public/code100.png';
 import Voice from '@/public/icon2.png';
 import Mail from '@/public/icon3.png';
@@ -9,11 +8,11 @@ import Lock from '@/public/Money100.png';
 import { RenderCards } from './RanderCards/RanderCards';
 export const PerformansSection = () => {
   return (
-    <section className={`main__performans_section ${style.performans_section}`}>
-      <div className={style.performans_section__container}>
-        <div className={style.performans_section__inner}>
-          <h3 className={style.performans_section__title}>На любом тарифе вам доступны</h3>
-          <ul className={style.performans_section__list}>
+    <section className={`main__performans_section ${style.section}`}>
+      <div className={style.section__container}>
+        <div className={style.section__inner}>
+          <h3 className={style.section__title}>На любом тарифе вам доступны</h3>
+          <ul className={style.section__list}>
             {RanderItems.map((item, pos) => (
               <RenderCards key={pos} image={item.image} title={item.title} descr={item.descr} />
             ))}

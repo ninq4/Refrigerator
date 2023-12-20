@@ -1,11 +1,11 @@
-import style from './domens-section.module.scss';
+import style from './domens.module.scss';
 
 export const DomensSection = () => {
   return (
-    <section className={style.domens_section}>
-      <div className={style.domens_section__container}>
-        <div className={style.domens_section__inner}>
-          <ul className={style.domens_section__list}>
+    <section className={style.section}>
+      <div className={style.section__container}>
+        <div className={style.section__inner}>
+          <ul className={style.section__list}>
             {DomensList.map((item, pos) => (
               <RanderDomens key={pos} title={item.title} price={item.price} />
             ))}
@@ -18,12 +18,12 @@ export const DomensSection = () => {
 
 const RanderDomens = ({ title, price }: { title: string; price: number }) => {
   return (
-    <li className={style.domens_section__items}>
-      <h5 className={style.domens_section__items_title}>.{title}</h5>
-      <p className={style.domens_section__items_price}>
+    <li className={style.section__items}>
+      <h5 className={style.section__items_title}>.{title}</h5>
+      <p className={style.section__items_price}>
         {price} ₽ <span>/мес</span>
       </p>
-      <p className={style.domens_section__items_registry}>Регистрация</p>
+      <p className={style.section__items_registry}>Регистрация</p>
     </li>
   );
 };

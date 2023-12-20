@@ -1,6 +1,6 @@
 'use client';
 import TabsBtns from '../tabsBtns/tabsBtns';
-import style from '../technology-section.module.scss';
+import style from '../technology.module.scss';
 import Image from 'next/image';
 import { useState } from 'react';
 import { CMSList, FrameworkList, TechnologyList } from '../itemsList/itemsList';
@@ -25,16 +25,16 @@ export const TabsList = () => {
   return (
     <>
       <TabsBtns category={category} setCategoryId={(id: number) => setCategory(id)} />
-      <ul className={style.technology_section__list}>{itemList}</ul>
+      <ul className={style.section__list}>{itemList}</ul>
     </>
   );
 };
 
 const RanderItems = ({ image, name }: { image: string; name: string }) => {
   return (
-    <li className={style.technology_section__item}>
-      <Image alt="" src={image} className={style.techonoly_section__image} />
-      <p className={style.technology_section__name}>{name}</p>
+    <li className={style.section__item}>
+      <Image alt="" src={image} className={style.section__image} />
+      <p className={style.section__name}>{name}</p>
     </li>
   );
 };

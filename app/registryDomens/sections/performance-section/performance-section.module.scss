@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
   &__list {
     padding: 0;
@@ -19,9 +20,15 @@
     grid-template-columns: repeat(12, 1fr);
     gap: 70px;
     margin-bottom: 100px;
+    @include adaptive(998px){
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
   }
   &__item {
     grid-column: 6 span;
+
 
     box-shadow: $shadow;
     border-radius: 6px;

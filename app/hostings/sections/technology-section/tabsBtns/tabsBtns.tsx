@@ -1,6 +1,6 @@
 'use client';
 import { observer } from 'mobx-react-lite';
-import style from '../technology-section.module.scss';
+import style from '../technology.module.scss';
 
 const TabsBtns = ({
   category,
@@ -12,13 +12,13 @@ const TabsBtns = ({
   const btnsList = ['CMS', 'Фреймворки', 'Технологии'];
 
   return (
-    <div className={style.technology_section__tabs_btns}>
+    <div className={style.section__tabs_btns}>
       {btnsList.map((btn, pos: number) => {
         category === pos;
         return (
           <button
             onClick={() => setCategoryId(pos)}
-            className={`${style.technology_section__tabs_btn} ${
+            className={`${style.section__tabs_btn} ${
               category === pos ? `${style.active}` : ''
             } `}
             key={pos}>

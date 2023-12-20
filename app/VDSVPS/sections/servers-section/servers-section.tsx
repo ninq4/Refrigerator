@@ -1,6 +1,6 @@
+import style from './servers.module.scss';
 import { RanderCards } from './RanderCards/RanderServersCards';
 import { RanderRange } from './RanderRange/RangerRange';
-import style from './servers-section.module.scss';
 import { Vidgets } from './vidgets/vidgets';
 export const ServersSection = () => {
   const CardList = [
@@ -87,11 +87,11 @@ export const ServersSection = () => {
     },
   ];
   return (
-    <section className={`main__servers-section ${style.servers_section}`}>
-      <div className={style.servers_section__container}>
-        <div className={style.servers_section__inner}>
+    <section className={`main__servers-section ${style.section}`}>
+      <div className={style.section__container}>
+        <div className={style.section__inner}>
           <Vidgets />
-          <ul className={style.servers_section__list}>
+          <ul className={style.section__list}>
             {CardList.map((item, pos) => (
               <RanderCards
                 key={pos}

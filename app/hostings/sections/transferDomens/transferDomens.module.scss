@@ -20,6 +20,10 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 300px;
+        @include adaptive(734px){
+            flex-direction: none;
+            gap: 0;
+        }
     }
     &__title{
        font-family: $font-monterrat;

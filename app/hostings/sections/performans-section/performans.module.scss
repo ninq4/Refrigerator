@@ -1,7 +1,7 @@
 @import '@/scss/vars.scss';
 @import '@/scss/mixins.scss';
 
-.performans_section {
+.section {
     margin: 0;
     padding: 0;
     padding-top: 100px;
@@ -23,6 +23,12 @@
         margin: 0;
         padding: 0;
         grid-column: 4 span;
+        @include adaptive(1424px){
+            grid-column: 6 span;
+        }
+        @include adaptive(702px){
+            grid-column: 12 span;
+        }
         display: flex;
         align-items: flex-start;
         flex-direction: column;

@@ -17,6 +17,12 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    // gap: 30px;
+    @include adaptive(959px){
+      gap: 30px;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   &__card {
     border-radius: 6px;

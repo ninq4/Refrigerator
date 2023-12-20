@@ -1,6 +1,6 @@
 'use client';
 import { RenderHosts } from '@/app/hostings/randerCards/RenderHosts';
-import style from '../hosting-section.module.scss';
+import style from '../hosting.module.scss';
 import { Switcher } from '../switcher/switcher';
 import TabsBtns from '../tabsBtns/tabsBtns';
 import { useEffect } from 'react';
@@ -14,21 +14,19 @@ export const HostsTabs = observer(() => {
   useEffect(() => {
     if (useSwitcher.switch == false) {
       fetchHostMonths();
-      console.log(useSwitcher.switch);
     } else {
       fetchHostYear();
-      console.log(useSwitcher.switch);
     }
   }, []);
   //   console.log(setCategoryId);
 
   return (
     <>
-      <header className={style.hostings_section__tabs_header}>
+      <header className={style.section__tabs_header}>
         <TabsBtns />
         <Switcher />
       </header>
-      <ul className={style.hostings_section__tabs}>
+      <ul className={style.section__tabs}>
         {useSwitcher.switch
           ? categoryYear.map((item, pos) => (
               <RenderHosts
