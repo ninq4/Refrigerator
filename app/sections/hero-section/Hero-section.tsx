@@ -7,7 +7,7 @@ export default function HeroSection() {
         <div className={`${style.section__container}`}>
           <div className={style.section__inner}>
             <div className={style.section__left}>
-              <h1 className={style.section__title}>Fucking.</h1>
+              <h1 className={style.section__title}>Сайт</h1>
               <p className={style.section__description}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit explicabo sunt natus
                 dolores, tenetur vero facilis expedita similique qui laboriosam! Nesciunt distinctio
