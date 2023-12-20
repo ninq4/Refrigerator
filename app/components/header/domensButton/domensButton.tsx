@@ -27,11 +27,21 @@ export const DomenButton = ({
           />
         </button>
         <menu className={`${style.header__vidget} ${open ? `${style.active}` : ''}`}>
-          {renderLink('/', 'Регистрация домена', 'Лучшие цены на регистрацию')}
-          {renderLink('/', 'SSL-сертификаты', 'Повышают репутацию вашего сайта')}
-          {renderLink('/', 'Перенос домена в HostName', 'Смена регистратора домена')}
-          {renderLink('/', 'Сервис Whois', 'Whois-проверка домена')}
-          {renderLink('/', 'Продление домена', 'Общая информация о хостинге')}
+          {renderLink(
+            '/registryDomens',
+            'Регистрация домена',
+            'Лучшие цены на регистрацию',
+            handleToggle,
+          )}
+          {renderLink('/SSL', 'SSL-сертификаты', 'Повышают репутацию вашего сайта', handleToggle)}
+          {renderLink(
+            '/DomainTransfer',
+            'Перенос домена в HostName',
+            'Смена регистратора домена',
+            handleToggle,
+          )}
+          {renderLink('/WhoIs', 'Сервис Whois', 'Whois-проверка домена', handleToggle)}
+          {renderLink('/DomainRenew', 'Продление домена', 'Общая информация о хостинге', handleToggle)}
         </menu>
       </li>
       <div
@@ -41,10 +51,15 @@ export const DomenButton = ({
   );
 };
 
-const renderLink = (href: string, title: string, descr: string) => {
+const renderLink = (
+  href: string,
+  title: string,
+  descr: string,
+  handleToggle: (setOpen: SetStateAction<boolean>) => void,
+) => {
   return (
     <li className={`${style.header__vidget_item}`}>
-      <Link href={href} className={style.header__vidget_link}>
+      <Link href={href} onClick={() => handleToggle(!open)} className={style.header__vidget_link}>
         <div className={style.header__vidget_wrapper}>
           <p className={style.header__vidget_title}>{title}</p>
           <p className={style.header__vidget_descr}>{descr}</p>

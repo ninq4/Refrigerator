@@ -6,6 +6,7 @@ export const useOpenVidget: Function = (InitialValue:boolean) => {
 
   const handleToggle = () => {
     setOpen(!open);
+    window.top?.scrollTo({ top: 0, behavior: 'smooth' });
   };
   useEffect(() => {
     const htmlElement = document.getElementsByTagName('html')[0];

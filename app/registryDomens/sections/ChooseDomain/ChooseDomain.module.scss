@@ -1,0 +1,38 @@
+@import '@/scss/vars.scss';
+@import '@/scss/mixins.scss';
+
+.chooseDomain_section {
+    margin: 0;
+    padding: 0;
+    padding-top: 100px;
+    &__container {
+        @include container;
+        background-color: $background-card;
+        border-radius: 20px;
+        padding: 30px 20px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__title{
+        padding: 0;
+        margin: 0;
+        font-family: $font-monterrat;
+        font-size: 49px;
+        font-weight: 600;
+        margin-bottom: 65px;
+    }
+    &__descr{
+        padding: 0;
+        margin: 0;
+        font-family: $font-incosolata;
+        font-size: 20px;
+        font-weight: 700;
+        color: rgba($text-color, .6);
+        max-width: 531px;
+    }
+    &__btn {
+        @include button($white-color, $accent-color);
+    }
+}

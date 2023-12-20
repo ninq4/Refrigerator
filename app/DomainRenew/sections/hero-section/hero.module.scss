@@ -1,0 +1,56 @@
+@import '@/scss/vars.scss';
+@import '@/scss/mixins.scss';
+
+.section{
+
+    margin: 0;
+    padding: 0;
+    color: $white-color;
+    background-color: $black-color;
+    border-radius: 0 0 20px 20px;
+    margin: 0px 10px 0px 10px;
+
+    &__container{
+        @include container;
+        // width: 100%;
+        // position: relative;
+        // display: flex;
+    }
+    &__inner{
+        padding-top: 80px;
+        padding-bottom: 100px;
+
+    }
+    &__right{
+        position: absolute; 
+        right: 0;
+        top: 80px;
+        z-index: 1;
+    }
+    
+    &__title{
+        margin: 0;
+        padding: 0;
+
+        font-family: $font-monterrat;
+        font-size: 61px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        max-width: 600px;
+        background-color: red;
+    }
+    &__description{
+        margin: 0;
+        padding: 0;
+
+        font-family: $font-monterrat;
+        font-size: 28px;
+        font-weight: 600;
+        max-width: 350px;
+        margin-bottom: 150px;
+    }
+    &__btn{
+        @include button($white-color, $accent-color);
+        width: 200px;
+    }
+}
