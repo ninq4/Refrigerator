@@ -9,6 +9,17 @@ export const useOpenBurger = (initialValueBurger: boolean) => {
     window.top?.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+
+  // useEffect(() => {
+  //   const htmlElement = document.getElementsByTagName('html')[0];
+  //   htmlElement.style.overflowY = openBurger ? 'hidden' : 'auto';
+
+  //   return () => {
+  //     htmlElement.style.overflowY = 'auto';
+  //   };
+  // }, [openBurger]);
+  
+
 const blockScroll = () => {
   const htmlElement = document.documentElement;
   htmlElement.style.overflow = openBurger ? 'hidden' : 'auto';
@@ -19,6 +30,7 @@ const blockScroll = () => {
       blockScroll();
     }
   }, [openBurger]);
+
 
   return { openBurger, handleToggleBurger, setOpenBurger };
 };

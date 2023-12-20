@@ -18,7 +18,7 @@ export default function HeroSection() {
               <div className={style.section__btn}>Попробовать</div>
             </div>
             <div className={style.section__right}>
-              {/* <SplineCanvas /> */}
+              <SplineCanvas />
             </div>
           </div>
         </div>

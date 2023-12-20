@@ -15,7 +15,7 @@ export default function NotFound() {
               height={600}
               className={style.notFound__image}
             />
-            <h1 className={style.notFound__title}>Not Found:<br/>Error 404</h1>
+            <h1 className={style.notFound__title}>404</h1>
           </Link>
         </div>
       </section>
