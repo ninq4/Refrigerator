@@ -7,7 +7,6 @@ export const BurgerButton = ({
   openBurger: boolean;
   handleToggleBurger: (setOpenBurger: SetStateAction<boolean>) => void;
 }) => {
-    console.log(openBurger)
   return (
     <button onClick={() => handleToggleBurger(!openBurger)} className={`${style.header__top_burger} ${openBurger ? `${style.active_burger}` : ''}`}>
       <span></span>
